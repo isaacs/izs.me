@@ -21,11 +21,12 @@ Busy running a startup.
 
 ## Stuff I Do
 
-* npm <http://www.npmjs.com/>
-* NodeJS <http://nodejs.org/>
-* writing <http://blog.izs.me/>
-* programming <http://github.com/isaacs>
-* tweeting <http://twitter.com/izs>
+* npm <https://www.npmjs.com/>
+* NodeJS <https://nodejs.org/>
+* testing <https://www.node-tap.org/>
+* writing <https://blog.izs.me/>
+* programming <https://github.com/isaacs>
+* tweeting <https://twitter.com/izs>
 
 ## School
 
