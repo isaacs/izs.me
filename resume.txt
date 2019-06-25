@@ -1,0 +1,35 @@
+# Isaac Z. Schlueter
+
+<i@izs.me>
+
+Oakland, CA 94610
+
+@izs
+
+## Status
+
+Busy running a startup.
+
+## Work
+
+* 2014/01 - Present: npm, Inc.
+* 2010/09 - 2013/12: Joyent
+* 2010/04 - 2010/08: Kno, Inc.
+* 2006/01 - 2010/01: Yahoo
+* 2002/12 - 2005/12: Data Strategies, Inc.
+* 1998/08 - 2002/06: SCSU
+
+## Stuff I Do
+
+* npm <http://www.npmjs.com/>
+* NodeJS <http://nodejs.org/>
+* writing <http://blog.izs.me/>
+* programming <http://github.com/isaacs>
+* tweeting <http://twitter.com/izs>
+
+## School
+
+* Attended Southern Connecticut State University
+* Studied Math, Computer Science, Physics, and Philosophy
+* Left without a degree
+* Also studied some sign language at Berkeley City College

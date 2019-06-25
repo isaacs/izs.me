@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/isaacs
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://izs.me
+  * I am isaacs (https://keybase.io/isaacs) on keybase.
+  * I have a public key with fingerprint 93C7 E9E9 1B49 E432 C2F7  5674 B0A7 8B0A 6C48 1CF6
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "010174bccea63e609cae6899a34d276db9e023eafe020bc533ddab22e3a4e21b3cfd0a",
+            "fingerprint": "93c7e9e91b49e432c2f75674b0a78b0a6c481cf6",
+            "host": "keybase.io",
+            "key_id": "b0a78b0a6c481cf6",
+            "kid": "010174bccea63e609cae6899a34d276db9e023eafe020bc533ddab22e3a4e21b3cfd0a",
+            "uid": "7dcbc3c46df2311680b77c628463f200",
+            "username": "isaacs"
+        },
+        "service": {
+            "hostname": "izs.me",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1475539671,
+    "expire_in": 157680000,
+    "prev": "1817d2f1770b67e382891674cb1a9a576bd5a95d07b39a12ce6f967c778217fb",
+    "seqno": 37,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.58
+Comment: https://keybase.io/crypto
+
+yMIeAnicrVJbSBVBGD5WVp4UK4kiI2sfTORQOzu7O7uniBIkyQLDIMLiNLe1LT27
+nd1zTmU9JBRElogUZRIShg8R+VBSIN0wi6zo8lCBdiEIMcmQbhhms1JvPTYP88/8
+833f//0/05MzNRTO6Ow4Fq4pW/Qto+92YzK0ZXT0RZ1EHLZPitZJu/lk4DWMe35s
+t82kqCQDGSCVUMqxDrkumxRz3TBNDFWmIJ0Rk8sK5NgSQSZUg5AxTBSFQ6xyBRBI
+LSZjKSJZdryaJ9yEHfeFrAkp4iY3AVFNrkKFKhbSdFFIxsgQm05VA1BLF8Sdjhcw
+hDmCPb7cdkROXGKT9v6B/8++k5NyiFFCIVV1ZikQAN2QCUJUVwxVh5YiywHQ44k4
+ruUCbXsYU086GJFELmVTHow16OPv+35vuThEJDfh+A51akRup++70YDi73MDTJqT
+2B92jNhxJsYnCCme8GwnLkWBQFLfDuSAijQNmjoCEYnvde0Ej9kBQkPCplhBGZ4S
+ksAAiCkWQEgmOuLQUAwTiKFTArCJBZwwDZsakxGBJgYK5bolZClChgKQRaSgnz1x
+R4pCJHziaqHp2dVx7CcTXDp459a2aaGMcGh65pTgX4XCWbP//rbmqTN+acvkyll3
+yh/hvqfdzU+rbqyqvfbh5/OIXb/WqHmyoLi90l/6pN1NZ72IHH7Q9XV71bPNnaX3
+rl/YtSZnYF4bzelrqujNfZP9LoQudd0s+jhRf75/2vDq13MzRy/2Fzpf8rcuWbxs
+x8DjaE/LgXWXc9kAK80sKLz6KuWkZdi6/v7gx1X5WXrd+5GTm4qhkZccP1Gw9oda
+kjrltQ2tSJ7pLC9puXtkrHeOtrJqphMLu98/7GhuKTldzqIVHQ1hv+jTyKD7OTXy
+0hvqaJhivh2syt7QNL+gqCyvsbtnbnpj1+zht+fOnrliWkOvaPTYvIdzjh5f6CqV
+E+vHXrfWjR9KT9/7GyD1Piw=
+=DUWy
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/isaacs
+
+==================================================================
