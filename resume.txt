@@ -22,8 +22,8 @@ Busy running a startup.
 ## Stuff I Do
 
 * npm <https://www.npmjs.com/>
-* NodeJS <https://nodejs.org/>
-* testing <https://www.node-tap.org/>
+* Node.js <https://nodejs.org/>
+* testing <https://node-tap.org/>
 * writing <https://blog.izs.me/>
 * programming <https://github.com/isaacs>
 * tweeting <https://twitter.com/izs>
