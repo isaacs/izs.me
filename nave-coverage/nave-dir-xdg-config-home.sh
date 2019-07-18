@@ -1,0 +1,1 @@
+coverage//nave-dir-xdg-config-home.sh.70e754eb57299018/

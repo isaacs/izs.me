@@ -1,0 +1,1 @@
+coverage//nave-is-a-bash-program.sh.70e754eb57299018/
