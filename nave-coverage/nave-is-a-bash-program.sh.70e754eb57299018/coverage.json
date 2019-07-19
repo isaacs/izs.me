@@ -1,12 +1,12 @@
 {
   "files": [
-    {"file": "/Users/isaacs/dev/js/nave/nave.sh", "percent_covered": "0.93", "covered_lines": "4", "total_lines": "428"}
+    {"file": "/Users/isaacs/dev/js/nave/nave.sh", "percent_covered": "0.89", "covered_lines": "4", "total_lines": "447"}
   ],
-  "percent_covered": "0.93",
+  "percent_covered": "0.89",
   "covered_lines": 4,
-  "total_lines": 428,
+  "total_lines": 447,
   "percent_low": 25,
   "percent_high": 75,
   "command": "nave-is-a-bash-program.sh",
-  "date": "2019-07-18 13:58:19"
+  "date": "2019-07-19 13:20:06"
 }
