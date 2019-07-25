@@ -1,12 +1,12 @@
 {
   "files": [
-    {"file": "/Users/isaacs/dev/js/nave/nave.sh", "percent_covered": "5.15", "covered_lines": "23", "total_lines": "447"}
+    {"file": "/Users/isaacs/dev/js/nave/nave.sh", "percent_covered": "4.35", "covered_lines": "20", "total_lines": "460"}
   ],
-  "percent_covered": "5.15",
-  "covered_lines": 23,
-  "total_lines": 447,
+  "percent_covered": "4.35",
+  "covered_lines": 20,
+  "total_lines": 460,
   "percent_low": 25,
   "percent_high": 75,
   "command": "mkdirp-fail.sh",
-  "date": "2019-07-19 13:20:06"
+  "date": "2019-07-24 23:15:39"
 }

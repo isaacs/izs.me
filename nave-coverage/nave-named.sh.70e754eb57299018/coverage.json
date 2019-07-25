@@ -1,0 +1,12 @@
+{
+  "files": [
+    {"file": "/Users/isaacs/dev/js/nave/nave.sh", "percent_covered": "42.61", "covered_lines": "196", "total_lines": "460"}
+  ],
+  "percent_covered": "42.61",
+  "covered_lines": 196,
+  "total_lines": 460,
+  "percent_low": 25,
+  "percent_high": 75,
+  "command": "nave-named.sh",
+  "date": "2019-07-24 23:15:41"
+}

@@ -1,0 +1,1 @@
+coverage//nave-auto.sh.70e754eb57299018/
