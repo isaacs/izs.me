@@ -25,7 +25,7 @@ Busy running a startup.
 * Node.js <https://nodejs.org/>
 * testing <https://node-tap.org/>
 * writing <https://blog.izs.me/>
-* programming <https://github.com/isaacs>
+* programming <https://github.com/sponsors/isaacs>
 * tweeting <https://twitter.com/izs>
 
 ## School
