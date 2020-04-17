@@ -12,7 +12,8 @@ Busy running a startup.
 
 ## Work
 
-* 2014/01 - Present: npm, Inc.
+* 2020/04 - Present: GitHub
+* 2014/01 - 2020/04: npm, Inc.
 * 2010/09 - 2013/12: Joyent
 * 2010/04 - 2010/08: Kno, Inc.
 * 2006/01 - 2010/01: Yahoo
