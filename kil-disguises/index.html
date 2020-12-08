@@ -1,0 +1,147 @@
+<!doctype html>
+<head>
+<title>becoming agents smith</title>
+<style type="text/css">
+body {
+  width: 320px;
+  margin: 20px auto;
+  font: 100% system-ui;
+}
+label {
+  background: #303;
+  color: white;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+label textarea {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+label.copied::after {
+  background: #fff;
+  color: #303;
+  display: block;
+  content: "copied";
+}
+</style>
+<script>
+const onClick = self => {
+  const { content } = self.dataset
+  console.log(content)
+  const t = document.createElement('textarea')
+  t.value = content
+  self.appendChild(t)
+  t.select()
+  document.execCommand('copy')
+  self.removeChild(t)
+  self.className = 'copied'
+  setTimeout(() => self.className = '', 1000)
+}
+</script>
+</head>
+
+<h2>HQ Skin</h2>
+<p>Turn off any HQ skins, so we all look the same.  Don't worry, you still get the benefits if it's not in use.</p>
+
+<h2>Avatar</h2>
+<p>save this image and set it as your avatar:</p>
+<p><a href="./smith.png"><img src="./smith.png" height=100 width=100></a></p>
+
+<h2>Chief Name</h2>
+<p>click the button with your name on it to copy your agent name, and paste it as your chief name</p>
+
+<!-- one space -->
+<p><label tabindex=-1 id="actualsmith" onclick="this.innerHTML = 'don\'t change a thing, buddy, you\'re good'">Mr. Smith</label></p>
+
+<p><label onclick="onClick(this)" data-content="M&#8203;r. Smith" tabindex=-1>isaacs</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. Smith" tabindex=-1>praet</label></p>
+<p><label onclick="onClick(this)" data-content="Mr. S&#8203;mith" tabindex=-1>nemesis</label></p>
+<p><label onclick="onClick(this)" data-content="Mr. Sm&#8203;ith" tabindex=-1>murderface</label></p>
+<p><label onclick="onClick(this)" data-content="Mr. Smi&#8203;th" tabindex=-1>david</label></p>
+<p><label onclick="onClick(this)" data-content="Mr. Smit&#8203;h" tabindex=-1>bdiddy</label></p>
+
+<!-- two spaces -->
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. Smith" tabindex=-1>craig</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. S&#8203;mith" tabindex=-1>nagato(Z)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. Sm&#8203;ith" tabindex=-1>lithium</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. Smi&#8203;th" tabindex=-1>tuhata</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. Smit&#8203;h" tabindex=-1>gruff</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. S&#8203;mith" tabindex=-1>morgs</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. Sm&#8203;ith" tabindex=-1>woody</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. Smi&#8203;th" tabindex=-1>bumblebee</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. Smit&#8203;h" tabindex=-1>windowlicker</label></p>
+<p><label onclick="onClick(this)" data-content="Mr. S&#8203;m&#8203;ith" tabindex=-1>von</label></p>
+<p><label onclick="onClick(this)" data-content="Mr. S&#8203;mi&#8203;th" tabindex=-1>jellysammich</label></p>
+<p><label onclick="onClick(this)" data-content="Mr. S&#8203;mit&#8203;h" tabindex=-1>hentai king</label></p>
+<p><label onclick="onClick(this)" data-content="Mr. Sm&#8203;i&#8203;th" tabindex=-1>nick klaus</label></p>
+
+<p>If your name isn't on the list and you wanna join the Agent Smith horde, poke isaacs and he'll add you.</p>
+
+<hr>
+
+<p>Placeholders so I don't have to type the code again for each person</p>
+
+<p><label onclick="onClick(this)" data-content="Mr. Sm&#8203;it&#8203;h" tabindex=-1>(extra 1)</label></p>
+<p><label onclick="onClick(this)" data-content="Mr. Smi&#8203;t&#8203;h" tabindex=-1>(extra 2)</label></p>
+
+<!-- three spaces -->
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. S&#8203;mith" tabindex=-1>(extra 3)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. Sm&#8203;ith" tabindex=-1>(extra 4)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. Smi&#8203;th" tabindex=-1>(extra 5)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. Smit&#8203;h" tabindex=-1>(extra 6)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. S&#8203;m&#8203;ith" tabindex=-1>(extra 7)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. S&#8203;mi&#8203;th" tabindex=-1>(extra 8)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. S&#8203;mit&#8203;h" tabindex=-1>(extra 9)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. Sm&#8203;i&#8203;th" tabindex=-1>(extra 10)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. Sm&#8203;it&#8203;h" tabindex=-1>(extra 11)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. Smi&#8203;t&#8203;h" tabindex=-1>(extra 11)</label></p>
+
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. S&#8203;m&#8203;ith" tabindex=-1>(extra 12)</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. S&#8203;mi&#8203;th" tabindex=-1>(extra 13)</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. S&#8203;mit&#8203;h" tabindex=-1>(extra 15)</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. Sm&#8203;i&#8203;th" tabindex=-1>(extra 16)</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. Sm&#8203;it&#8203;h" tabindex=-1>(extra 17)</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. Smi&#8203;t&#8203;h" tabindex=-1>(extra 18)</label></p>
+
+<p><label onclick="onClick(this)" data-content="Mr. S&#8203;m&#8203;i&#8203;th" tabindex=-1>(extra 19)</label></p>
+<p><label onclick="onClick(this)" data-content="Mr. S&#8203;m&#8203;it&#8203;h" tabindex=-1>(extra 20)</label></p>
+<p><label onclick="onClick(this)" data-content="Mr. S&#8203;mi&#8203;t&#8203;h" tabindex=-1>(extra 21)</label></p>
+
+<p><label onclick="onClick(this)" data-content="Mr. Sm&#8203;i&#8203;t&#8203;h" tabindex=-1>(extra 22)</label></p>
+
+<!-- four spaces -->
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. S&#8203;m&#8203;ith" tabindex=-1>(extra 23)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. S&#8203;mi&#8203;th" tabindex=-1>(extra 24)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. S&#8203;mit&#8203;h" tabindex=-1>(extra 25)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. Sm&#8203;i&#8203;th" tabindex=-1>(extra 26)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. Sm&#8203;it&#8203;h" tabindex=-1>(extra 27)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. Smi&#8203;t&#8203;h" tabindex=-1>(extra 28)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. S&#8203;m&#8203;i&#8203;th" tabindex=-1>(extra 29)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. S&#8203;m&#8203;it&#8203;h" tabindex=-1>(extra 30)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. S&#8203;mi&#8203;t&#8203;h" tabindex=-1>(extra 31)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. Sm&#8203;i&#8203;t&#8203;h" tabindex=-1>(extra 32)</label></p>
+
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. S&#8203;m&#8203;i&#8203;th" tabindex=-1>(extra 33)</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. S&#8203;m&#8203;it&#8203;h" tabindex=-1>(extra 34)</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. S&#8203;mi&#8203;t&#8203;h" tabindex=-1>(extra 35)</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. Sm&#8203;i&#8203;t&#8203;h" tabindex=-1>(extra 36)</label></p>
+
+<p><label onclick="onClick(this)" data-content="Mr. S&#8203;m&#8203;i&#8203;t&#8203;h" tabindex=-1>(extra 37)</label></p>
+
+<!-- five spaces -->
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. S&#8203;m&#8203;i&#8203;th" tabindex=-1>(extra 38)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. S&#8203;m&#8203;it&#8203;h" tabindex=-1>(extra 39)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. S&#8203;mi&#8203;t&#8203;h" tabindex=-1>(extra 40)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. Sm&#8203;i&#8203;t&#8203;h" tabindex=-1>(extra 41)</label></p>
+<p><label onclick="onClick(this)" data-content="M&#8203;r. S&#8203;m&#8203;i&#8203;t&#8203;h" tabindex=-1>(extra 42)</label></p>
+<p><label onclick="onClick(this)" data-content="Mr&#8203;. S&#8203;m&#8203;i&#8203;t&#8203;h" tabindex=-1>(extra 43)</label></p>
+
+<!-- six spaces -->
+<p><label onclick="onClick(this)" data-content="M&#8203;r&#8203;. S&#8203;m&#8203;i&#8203;t&#8203;h" tabindex=-1>(extra 44)</label></p>
