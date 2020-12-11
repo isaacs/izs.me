@@ -1,0 +1,107 @@
+<!doctype html>
+<head>
+<title>becoming agents smith</title>
+<style type="text/css">
+body {
+  width: 320px;
+  margin: 20px auto;
+  font: 100% system-ui;
+}
+label {
+  background: #303;
+  color: white;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+label textarea {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+label.copied::after {
+  background: #fff;
+  color: #303;
+  display: block;
+  content: "copied";
+}
+</style>
+<script>
+const onClick = self => {
+  const { content } = self.dataset
+  if (!/\u200b/.test(content)) {
+    self.innerHTML = `don't change a thing, you're good`
+    return
+  }
+  console.log(content)
+  const t = document.createElement('textarea')
+  t.value = content
+  self.appendChild(t)
+  t.select()
+  document.execCommand('copy')
+  self.removeChild(t)
+  self.className = 'copied'
+  setTimeout(() => self.className = '', 1000)
+}
+
+const generate = () => {
+  const origEl = document.getElementById('original')
+  const output = document.getElementById('output')
+  const orig = origEl.value.trim().replace(/\u200b/g, '')
+  if (!orig) {
+    origEl.focus()
+    return false
+  }
+
+  if (/  /.test(orig)) {
+    alert('cannot have two spaces in a row, try again')
+    origEl.focus()
+  }
+
+  // can go between any chars that are not spaces
+  const chars = orig.split('').reduce((chars, char, i) => {
+    if (char === ' ' || / $/.test(chars[chars.length-1] || ''))
+      chars[chars.length - 1] += char
+    else
+      chars.push(char)
+    return chars
+  }, [])
+
+  const set = inject(chars)
+  output.innerHTML = set.filter(n => n.replace(/&#8203;/g, '\u200b').length <= 16).map((n, i) =>
+    `<p><label onclick="onClick(this)" data-content="${n}" tabindex=-1>${
+      n === orig ? `${orig} (original, unchanged)` : `${i}: ${n.replace(/&#8203;/g, '|')}`}</label></p>`
+  ).join('\n')
+
+  return false
+}
+
+const inject = chars => {
+  if (chars.length === 1)
+    return chars
+
+  const [head, ...tail] = chars
+  return [
+    ...(inject(tail).map(tail => [head, ...tail].join(''))),
+    ...(inject(tail).map(tail => [head, '&#8203;', ...tail].join(''))),
+  ]
+}
+</script>
+</head>
+
+<h2>generate a bunch of "identical" chief names</h2>
+
+<form id="form" action="#" onsubmit="generate()">
+  <p><label>name to clone <input id="original"></label></p>
+  <p><label onclick="generate()">make it happen</label></p>
+</form>
+
+<h2>buttons go here</h2>
+
+<p>Click a button to copy a chief name.  The `|` shows where a zero-width space has been injected, but it won't be visible.</p>
+<div id="output"></div>
