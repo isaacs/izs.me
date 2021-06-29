@@ -31,7 +31,16 @@ label.copied::after {
   content: "copied";
 }
 </style>
+
 <script>
+// also swap out cyrilic versions of latin letters that look identical
+const cyrils = {
+  c: 'с',
+  a: 'а',
+  e: 'е',
+}
+const cyrilre = /([сае])/g
+
 const onClick = self => {
   const { content } = self.dataset
   if (!/\u200b/.test(content)) {
@@ -73,9 +82,13 @@ const generate = () => {
   }, [])
 
   const set = inject(chars)
+
   output.innerHTML = set.filter(n => n.replace(/&#8203;/g, '\u200b').length <= 16).map((n, i) =>
     `<p><label onclick="onClick(this)" data-content="${n}" tabindex=-1>${
-      n === orig ? `${orig} (original, unchanged)` : `${i}: ${n.replace(/&#8203;/g, '|')}`}</label></p>`
+      n === orig
+        ? `${orig} (original, unchanged)`
+        : `${i}: ${n.replace(/&#8203;/g, '|').replace(cyrilre, '<span style="color:red">$1</span>')
+    }`}</label></p>`
   ).join('\n')
 
   return false
@@ -86,10 +99,22 @@ const inject = chars => {
     return chars
 
   const [head, ...tail] = chars
-  return [
+  const ret = [
     ...(inject(tail).map(tail => [head, ...tail].join(''))),
     ...(inject(tail).map(tail => [head, '&#8203;', ...tail].join(''))),
   ]
+
+  for (const [latin, cyril] of Object.entries(cyrils)) {
+    if (head.includes(latin)) {
+      const h = head.split(latin).join(cyril)
+      ret.push(
+        ...(inject(tail).map(tail => [h, ...tail].join(''))),
+        ...(inject(tail).map(tail => [h, '&#8203;', ...tail].join('')))
+      )
+    }
+  }
+
+  return ret
 }
 </script>
 </head>
@@ -103,5 +128,5 @@ const inject = chars => {
 
 <h2>buttons go here</h2>
 
-<p>Click a button to copy a chief name.  The `|` shows where a zero-width space has been injected, but it won't be visible.</p>
+<p>Click a button to copy a chief name.  The `|` shows where a zero-width space has been injected, but it won't be visible. Red letters are cyrillic versions.</p>
 <div id="output"></div>
