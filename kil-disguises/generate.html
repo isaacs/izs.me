@@ -43,10 +43,6 @@ const cyrilre = /([сае])/g
 
 const onClick = self => {
   const { content } = self.dataset
-  if (!/\u200b/.test(content)) {
-    self.innerHTML = `don't change a thing, you're good`
-    return
-  }
   console.log(content)
   const t = document.createElement('textarea')
   t.value = content
