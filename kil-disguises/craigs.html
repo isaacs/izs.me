@@ -87,7 +87,6 @@ const generate = () => {
     }`}</label></p>`
   ).join('\n')
 
-  location.hash = `#${orig}`
   return false
 }
 
@@ -121,19 +120,22 @@ const inject = chars => {
 </script>
 </head>
 
-<h2>generate a bunch of "identical" chief names</h2>
+<h2>attack of the craigs</h2>
+<p><img src="attack-of-the-craigs.jpg" width=400></p>
 
-<form id="form" action="#" onsubmit="generate()">
-  <p><label>name to clone <input id="original" value="isaacs"></label></p>
+<form id="form" action="#" onsubmit="generate()" style="display:none">
+  <p><label>name to clone <input id="original" value="ScrotalFury"></label></p>
   <p><label onclick="generate()">make it happen</label></p>
 </form>
 
-<h2>buttons go here</h2>
+<h2>Avatar</h2>
+<p><a href="./scrotal-fury.jpg"><img src="./scrotal-fury.jpg" height=100 width=100></a></p>
+
+<h2>Chief Name</h2>
 
 <p>Click a button to copy a chief name.  The `|` shows where a zero-width space has been injected, but it won't be visible. Red letters are cyrillic versions.</p>
 <div id="output"></div>
 <script>
-if (location.hash.length > 1)
-  document.getElementById('original').value = location.hash.substr(1)
 generate()
 </script>
+
