@@ -35,11 +35,25 @@ label.copied::after {
 <script>
 // also swap out cyrilic versions of latin letters that look identical
 const cyrils = {
-  c: 'с',
+  A: 'А',
   a: 'а',
+  B: 'В',
+  C: 'С',
+  c: 'с',
+  E: 'Е',
   e: 'е',
+  H: 'Н',
+  M: 'М',
+  O: 'О',
+  o: 'о',
+  P: 'Р',
+  p: 'р',
+  T: 'Т',
+  X: 'Х',
+  x: 'х',
+  y: 'у',
 }
-const cyrilre = /([сае])/g
+const cyrilre = new RegExp('([' + Object.values(cyrils).join('') + '])', 'g')
 
 const onClick = self => {
   const { content } = self.dataset
@@ -92,13 +106,8 @@ const generate = () => {
 }
 
 const inject = chars => {
-  if (chars.length === 1) {
-    for (const [latin, cyril] of Object.entries(cyrils)) {
-      if (chars[0].includes(latin))
-        chars.push(cyril)
-    }
+  if (chars.length === 1)
     return chars
-  }
 
   const [head, ...tail] = chars
   const ret = [
@@ -112,6 +121,12 @@ const inject = chars => {
       ret.push(
         ...(inject(tail).map(tail => [h, ...tail].join(''))),
         ...(inject(tail).map(tail => [h, '&#8203;', ...tail].join('')))
+      )
+    }
+    if (tail.length === 1 && tail[0] === latin) {
+      ret.push(
+        ...(inject(tail).map(tail => [head, cyril].join(''))),
+        ...(inject(tail).map(tail => [head, '&#8203;', cyril].join('')))
       )
     }
   }
