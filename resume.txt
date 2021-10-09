@@ -31,3 +31,6 @@ Oakland, CA 94610
 * Studied Math, Computer Science, Physics, and Philosophy
 * Left without a degree
 * Also studied some sign language at Berkeley City College
+
+HTML format: <https://izs.me>
+More details: <https://izs.me/resume.html>
