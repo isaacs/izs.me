@@ -8,7 +8,8 @@ Oakland, CA 94610
 
 ## Work
 
-* 2020/04 - Present: GitHub
+* 2021/11 - Present: Tier
+* 2020/04 - 2021/11: GitHub
 * 2014/01 - 2020/04: npm, Inc.
 * 2010/09 - 2013/12: Joyent
 * 2010/04 - 2010/08: Kno, Inc.
