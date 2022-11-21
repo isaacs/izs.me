@@ -4,11 +4,9 @@
 
 Oakland, CA 94610
 
-@izs
-
 ## Work
 
-* 2021/11 - Present: Tier
+* 2021/11 - Present: Tier <https://tier.run>
 * 2020/04 - 2021/11: GitHub
 * 2014/01 - 2020/04: npm, Inc.
 * 2010/09 - 2013/12: Joyent
@@ -22,9 +20,9 @@ Oakland, CA 94610
 * npm <https://www.npmjs.com/>
 * Node.js <https://nodejs.org/>
 * testing <https://node-tap.org/>
-* writing <https://blog.izs.me/>
-* programming <https://github.com/sponsors/isaacs>
-* tweeting <https://twitter.com/izs>
+* writing code <https://github.com/sponsors/isaacs>
+* writing words (long) <https://blog.izs.me/>
+* writing words (short) <https://fosstodon.org/@isaacs>
 * you can rent my expertise <https://izs.me/hire>
 
 ## School
