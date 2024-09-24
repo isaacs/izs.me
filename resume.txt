@@ -6,7 +6,9 @@ Oakland, CA 94609
 
 ## Work
 
-* 2021/11 - Present: Tier <https://tier.run>
+* 2024/02 - Present: vlt technology inc. <https://vlt.sh>
+* 2023/07 - 2024/01: Sabbatical
+* 2021/11 - 2023/07: Tier.run
 * 2020/04 - 2021/11: GitHub
 * 2014/01 - 2020/04: npm, Inc.
 * 2010/09 - 2013/12: Joyent
@@ -22,8 +24,7 @@ Oakland, CA 94609
 * testing <https://node-tap.org/>
 * writing code <https://github.com/sponsors/isaacs>
 * writing words (long) <https://blog.izs.me/>
-* writing words (short) <https://fosstodon.org/@isaacs>
-* you can rent my expertise <https://izs.me/hire>
+* writing words (short) <https://x.com/izs>
 
 ## School
 
