@@ -24,7 +24,8 @@ Oakland, CA 94609
 * testing <https://node-tap.org/>
 * writing code <https://github.com/sponsors/isaacs>
 * writing words (long) <https://blog.izs.me/>
-* writing words (short) <https://x.com/izs>
+* writing words (short) <https://bsky.app/profile/isaacs.bsky.social>
+* writing words (medium) <https://www.reddit.com/user/isaacs_>
 
 ## School
 
