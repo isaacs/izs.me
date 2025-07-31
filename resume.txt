@@ -6,7 +6,7 @@ Oakland, CA 94609
 
 ## Work
 
-* 2024/02 - Present: vlt technology inc. <https://vlt.sh>
+* 2024/02 - 2025/07: vlt technology inc. <https://vlt.sh>
 * 2023/07 - 2024/01: Sabbatical
 * 2021/11 - 2023/07: Tier.run
 * 2020/04 - 2021/11: GitHub
@@ -23,9 +23,10 @@ Oakland, CA 94609
 * Node.js <https://nodejs.org/>
 * testing <https://node-tap.org/>
 * writing code <https://github.com/sponsors/isaacs>
-* writing words (long) <https://blog.izs.me/>
-* writing words (short) <https://bsky.app/profile/isaacs.bsky.social>
-* writing words (medium) <https://www.reddit.com/user/isaacs_>
+* writing words
+  * long <https://blog.izs.me/>
+  * medium <https://www.reddit.com/user/isaacs_>
+  * short <https://bsky.app/profile/isaacs.bsky.social>
 
 ## School
 
