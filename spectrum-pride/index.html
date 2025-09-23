@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style type="text/css">
+@font-face {
+  font-family: OldStandardTT;
+  src: url('./OldStandard-Regular.otf');
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --bar-width: 100px;
+  --red:    #f00;
+  --orange: #f80;
+  --yellow: #ff0;
+  --green:  #080;
+  --cyan:   #0ff;
+  --blue:   #00f;
+  --purple: #80f;
+}
+p {
+  font-family: 'Old Standard TT', OldStandardTT;
+  font-size:  calc(var(--bar-width) * 15.5);
+  position: absolute;
+  margin-top: calc(var(--bar-width) * -1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+div {
+  position: absolute;
+  width: calc(var(--bar-width) * 14);
+  height: var(--bar-width);
+}
+
+.red    { top: calc(0 * var(--bar-width)); background-color: var(--red)    }
+.orange { top: calc(1 * var(--bar-width)); background-color: var(--orange) }
+.yellow { top: calc(2 * var(--bar-width)); background-color: var(--yellow) }
+.green  { top: calc(3 * var(--bar-width)); background-color: var(--green)  }
+.cyan   { top: calc(4 * var(--bar-width)); background-color: var(--cyan)   }
+.blue   { top: calc(5 * var(--bar-width)); background-color: var(--blue)   }
+.purple { top: calc(6 * var(--bar-width)); background-color: var(--purple) }
+
+body {
+  position: relative;
+  height: calc(var(--bar-width) * 7);
+  width: calc(var(--bar-width) * 14);
+}
+  </style>
+  </head>
+  <body>
+    <div class="red"></div>
+    <div class="orange"></div>
+    <div class="yellow"></div>
+    <div class="green"></div>
+    <div class="cyan"></div>
+    <div class="blue"></div>
+    <div class="purple"></div>
+    <p>∞</p>
+  </body>
+</html>
+
