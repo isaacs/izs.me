@@ -18,6 +18,7 @@
   --magenta: #f0f;
   --black:   #000;
   --border-width: 3px;
+  --outer-border: 2;
 }
 html {
   height: 100%;
@@ -28,16 +29,16 @@ body {
   height: 100%;
   width: auto;
   padding: 0;
-  min-height: calc(var(--border-width) * 2 + var(--radius));
-  min-width: calc(var(--border-width) * 2 + var(--radius));
+  min-height: calc(var(--border-width) * var(--outer-border) * 2 + var(--radius));
+  min-width: calc(var(--border-width) * var(--outer-border) * 2 + var(--radius));
 }
 div {
   position: absolute;
   width: var(--radius);
   height: var(--radius);
-  border: calc(var(--border-width) * 2) solid var(--black);
-  top: calc(50% + calc(var(--border-width) * 2));
-  left: calc(50% + calc(var(--border-width) * 2));
+  border: calc(var(--border-width) * var(--outer-border)) solid var(--black);
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background-image: conic-gradient(
@@ -68,9 +69,6 @@ span.back {
 }
 span.forward {
   transform: rotate(45deg);
-}
-body {
-  position: relative;
 }
   </style>
   </head>
