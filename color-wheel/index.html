@@ -7,7 +7,7 @@
   padding: 0;
 }
 :root {
-  --radius: 640px;
+  --diameter: 640px;
   --red:     #f00;
   --orange:  #f80;
   --yellow:  #ff0;
@@ -29,13 +29,17 @@ body {
   height: 100%;
   width: auto;
   padding: 0;
-  min-height: calc(var(--border-width) * var(--outer-border) * 2 + var(--radius));
-  min-width: calc(var(--border-width) * var(--outer-border) * 2 + var(--radius));
+  min-height: calc(
+    var(--border-width) * var(--outer-border) * 2 + var(--diameter)
+  );
+  min-width: calc(
+    var(--border-width) * var(--outer-border) * 2 + var(--diameter)
+  );
 }
 div {
   position: absolute;
-  width: var(--radius);
-  height: var(--radius);
+  width: var(--diameter);
+  height: var(--diameter);
   border: calc(var(--border-width) * var(--outer-border)) solid var(--black);
   top: 50%;
   left: 50%;
@@ -56,7 +60,7 @@ span {
   display: block;
   position: absolute;
   height: var(--border-width);
-  width: var(--radius);
+  width: var(--diameter);
   background: var(--black);
   top: calc(50% - calc(var(--border-width) / 2));
   left: 0;

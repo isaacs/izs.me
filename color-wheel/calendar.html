@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --diameter: 480px;
+  --red:     #f00;
+  --orange:  #f80;
+  --yellow:  #ff0;
+  --green:   #080;
+  --cyan:    #0ff;
+  --blue:    #00f;
+  --purple:  #80f;
+  --magenta: #f0f;
+  --black:   #000;
+  --border-width: 3px;
+  --outer-border: 2;
+  --star-size: 80px;
+  --star-margin: 10px;
+}
+html {
+  height: 100%;
+  padding: 0;
+}
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  min-height: calc(
+    var(--border-width) * var(--outer-border) * 2 +
+    var(--diameter) +
+    var(--star-size) * 2 +
+    var(--star-margin)
+  ); 
+  min-width: calc(
+    var(--border-width) * var(--outer-border) * 2 +
+    var(--diameter) +
+    var(--star-size) * 2 +
+    var(--star-margin)
+  );
+}
+.wheel {
+  position: absolute;
+  width: var(--diameter);
+  height: var(--diameter);
+  border: calc(var(--border-width) * var(--outer-border)) solid var(--black);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-image: conic-gradient(
+    var(--orange) 0%, var(--orange) 12.5%,
+    var(--red) 12.5%, var(--red) 25%,
+    var(--magenta) 25%, var(--magenta) 37.5%, 
+    var(--purple) 37.5%, var(--purple) 50%,
+    var(--blue) 50%, var(--blue) 62.5%,
+    var(--cyan) 62.5%, var(--cyan) 75%,
+    var(--green) 75%, var(--green) 87.5%,
+    var(--yellow) 87.5%, var(--yellow) 100%
+  );
+}
+.inner-border {
+  display: block;
+  position: absolute;
+  height: var(--border-width);
+  width: var(--diameter);
+  background: var(--black);
+  top: calc(50% - calc(var(--border-width) / 2));
+  left: 0;
+}
+.inner-border.vertical {
+  transform: rotate(90deg);
+}
+.inner-border.back {
+  transform: rotate(-45deg);
+}
+.inner-border.forward {
+  transform: rotate(45deg);
+}
+
+.season {
+  position: absolute;
+  width: var(--star-size);
+  height: var(--star-size);
+}
+.season.outline {
+  width: calc(var(--star-size) + var(--border-width));
+  height: calc(var(--star-size) + var(--border-width));
+  background: var(--black) !important;
+  margin-top: calc(-1 * var(--border-width) * .5);
+  margin-left: calc(-1 * var(--border-width) * .5);
+  z-index: -1;
+}
+
+.winter {
+  width: var(--star-size);  
+  aspect-ratio: 1;
+  background: var(--purple);
+  clip-path: polygon(50% 0,
+    calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+    calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+  );
+  top: calc(
+    var(--diameter) +
+    var(--border-width) * var(--outer-border) * 2 +
+    var(--star-margin)
+  );
+  left: calc(50% - 0.5 * var(--star-size));
+}
+
+
+
+.summer {
+  width: var(--star-size);  
+  aspect-ratio: 1;
+  background: var(--yellow);
+  clip-path: polygon(
+    50% 100%,
+    59.55% 69.82%,
+    89.09% 81.17%,
+    71.45% 54.9%,
+    98.75% 38.87%,
+    67.2% 36.28%,
+    71.69% 4.95%,
+    50% 28%,
+    28.31% 4.95%,
+    32.8% 36.28%,
+    1.25% 38.87%,
+    28.55% 54.9%,
+    10.91% 81.17%,
+    40.45% 69.82%
+  );
+  left: calc(50% - 0.5 * var(--star-size));
+  top: calc(
+    -1 * var(--outer-border) * var(--border-width) + 
+    -1 * var(--star-size) -
+    var(--star-margin)
+  );
+}
+
+.lughnasadh {
+  background: var(--green);
+  top: calc(
+    -1 * var(--outer-border) * var(--border-width) + 
+    -1 * var(--star-size) +
+    -1 * var(--star-margin) * cos(45deg) +
+    calc(1 - cos(45deg)) * var(--diameter) / 2
+  );
+  left: calc(
+    -1 * var(--outer-border) * var(--border-width) +
+    -1 * var(--star-size) +
+    -1 * var(--star-margin) * cos(45deg) +
+    calc(1 - cos(45deg)) * var(--diameter) / 2
+  );
+  --n: 70%;
+  --i: 25%;
+  clip-path: shape(
+    from 50% calc(50% - var(--i)),
+    curve to calc(50% + var(--i) * cos(30deg)) calc(50% - var(--i) / 2)
+      with calc(50% + var(--n) * cos(60deg)) calc(50% - var(--n) * sin(60deg)),
+    curve to calc(50% + var(--i) * cos(30deg)) calc(50% + var(--i) / 2)
+      with calc(50% + var(--n)) 50%,
+    curve to 50% calc(50% + var(--i))
+      with calc(50% + var(--n) * cos(60deg)) calc(50% + var(--n) * sin(60deg)),
+    curve to calc(50% - var(--i) * cos(30deg)) calc(50% + var(--i) / 2)
+      with calc(50% - var(--n) * cos(60deg)) calc(50% + var(--n) * sin(60deg)),
+    curve to calc(50% - var(--i) * cos(30deg)) calc(50% - var(--i) / 2)
+      with calc(50% - var(--n)) 50%,
+    curve to 50% calc(50% - var(--i))
+      with calc(50% - var(--n) * cos(60deg)) calc(50% - var(--n) * sin(60deg)),
+    close
+  );
+}
+
+.autumn {
+  background: var(--cyan);
+  top: calc(
+    50%
+    - var(--star-size) / 2
+    - var(--outer-border) * var(--border-width) / 2
+  );
+  left: calc(
+    -1 * var(--outer-border) * var(--border-width) +
+    -1 * var(--star-size) +
+    -1 * var(--star-margin)
+  );
+}
+
+.samhain {
+  background: var(--blue);
+  top: calc(
+    100%
+    - calc(1 - cos(45deg)) * var(--diameter) / 2
+    + var(--star-margin) * cos(45deg)
+    + var(--outer-border) * var(--border-width)
+  );
+
+  left: calc(
+    -1 * var(--outer-border) * var(--border-width) +
+    -1 * var(--star-size) +
+    -1 * var(--star-margin) * cos(45deg) +
+    calc(1 - cos(45deg)) * var(--diameter) / 2
+  );
+}
+
+.imbolc {
+  background: var(--magenta);
+  top: calc(
+    100%
+    - calc(1 - cos(45deg)) * var(--diameter) / 2
+    + var(--star-margin) * cos(45deg)
+    + var(--outer-border) * var(--border-width)
+  );
+  left: calc(
+    50%
+    + var(--border-width)
+    + var(--star-margin) * cos(45deg)
+    + cos(45deg) * var(--diameter) / 2
+  );
+}
+
+.spring {
+  background: var(--red);
+  left: calc(
+    100% + var(--border-width) * var(--outer-border) +
+    var(--star-margin)
+  );
+  top: calc(
+    50%
+    - var(--star-size) / 2
+    - var(--outer-border) * var(--border-width) / 2
+  );
+}
+
+.beltane {
+  background: var(--orange);
+  left: calc(
+    50%
+    + var(--border-width)
+    + var(--star-margin) * cos(45deg)
+    + cos(45deg) * var(--diameter) / 2
+  );
+  top: calc(
+    -1 * var(--outer-border) * var(--border-width) + 
+    -1 * var(--star-size) +
+    -1 * var(--star-margin) * cos(45deg) +
+    calc(1 - cos(45deg)) * var(--diameter) / 2
+  );
+}
+  </style>
+  </head>
+  <body>
+    <div class="wheel">
+      <span class="inner-border vertical"></span>
+      <span class="inner-border horizontal"></span>
+      <span class="inner-border back"></span>
+      <span class="inner-border forward"></span>
+
+      <div class="season summer outline"></div>
+      <div class="season summer"></div>
+
+      <div class="season lughnasadh outline"></div>
+      <div class="season lughnasadh"></div>
+
+      <div class="season autumn outline"></div>
+      <div class="season autumn"></div>
+
+      <div class="season samhain outline"></div>
+      <div class="season samhain"></div>
+
+      <div class="season winter outline"></div>
+      <div class="season winter"></div>
+
+      <div class="season imbolc outline"></div>
+      <div class="season imbolc"></div>
+
+      <div class="season spring outline"></div>
+      <div class="season spring"></div>
+
+      <div class="season beltane outline"></div>
+      <div class="season beltane"></div>
+    </div>
+  </body>
+</html>
+
