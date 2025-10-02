@@ -19,7 +19,7 @@
   --black:   #000;
   --border-width: 3px;
   --outer-border: 2;
-  --star-size: 80px;
+  --star-size: 100px;
   --star-margin: 10px;
 }
 html {
@@ -89,19 +89,48 @@ body {
   height: var(--star-size);
 }
 .season.outline {
-  width: calc(var(--star-size) + var(--border-width));
-  height: calc(var(--star-size) + var(--border-width));
   background: var(--black) !important;
-  margin-top: calc(-1 * var(--border-width) * .5);
-  margin-left: calc(-1 * var(--border-width) * .5);
   z-index: -1;
 }
+
+.beltane-shadow {
+  --pos: 1px;
+  --neg: -1px;
+  --black: rgba(0, 0, 0, 0.7);
+  filter:
+          drop-shadow(var(--pos) 0 0 var(--black))
+          drop-shadow(var(--neg) 0 0 var(--black))
+          drop-shadow(0 var(--pos) 0 var(--black))
+          drop-shadow(0 var(--neg) 0 var(--black))
+}
+
+
+.season.outline.c {
+  width: calc(var(--star-size) + var(--border-width) * 2);
+  height: calc(var(--star-size) + var(--border-width) * 2);
+  margin-top: calc(-1 * var(--border-width));
+  margin-left: calc(-1 * var(--border-width));
+}
+.season.outline.t {
+  margin-top: calc(-1 * var(--border-width) * 0.5);
+}
+.season.outline.b {
+  margin-top: calc(1 * var(--border-width) * 0.5);
+}
+.season.outline.l {
+  margin-left: calc(-1 * var(--border-width) * 0.5);
+}
+.season.outline.r {
+  margin-left: calc(1 * var(--border-width) * 0.5);
+}
+
 
 .winter {
   width: var(--star-size);  
   aspect-ratio: 1;
   background: var(--purple);
-  clip-path: polygon(50% 0,
+  clip-path: polygon(
+    50% 0,
     calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
     calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
     calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
@@ -150,31 +179,77 @@ body {
   top: calc(
     -1 * var(--outer-border) * var(--border-width) + 
     -1 * var(--star-size) +
-    -1 * var(--star-margin) * cos(45deg) +
     calc(1 - cos(45deg)) * var(--diameter) / 2
   );
   left: calc(
     -1 * var(--outer-border) * var(--border-width) +
     -1 * var(--star-size) +
-    -1 * var(--star-margin) * cos(45deg) +
     calc(1 - cos(45deg)) * var(--diameter) / 2
   );
-  --n: 70%;
-  --i: 25%;
+
+  --x: 27%;
+  --y: 33%;
+  --a: 55deg;
+  --N: 6;
+  --t: calc(360deg / var(--N));
+
+  --Ax: calc(50% + var(--x) * sin(calc(0 * var(--t))));
+  --Ay: calc(50% - var(--x) * cos(calc(0 * var(--t))));
+  --Bx: calc(50% + var(--x) * sin(calc(1 * var(--t))));
+  --By: calc(50% - var(--x) * cos(calc(1 * var(--t))));
+  --Cx: calc(50% + var(--x) * sin(calc(2 * var(--t))));
+  --Cy: calc(50% - var(--x) * cos(calc(2 * var(--t))));
+  --Dx: calc(50% + var(--x) * sin(calc(3 * var(--t))));
+  --Dy: calc(50% - var(--x) * cos(calc(3 * var(--t))));
+  --Ex: calc(50% + var(--x) * sin(calc(4 * var(--t))));
+  --Ey: calc(50% - var(--x) * cos(calc(4 * var(--t))));
+  --Fx: calc(50% + var(--x) * sin(calc(5 * var(--t))));
+  --Fy: calc(50% - var(--x) * cos(calc(5 * var(--t))));
+
+  --Vx: calc(var(--Ax) + var(--y) * sin(calc(var(--t) * 0 - var(--a)/2)));
+  --Vy: calc(var(--Ay) - var(--y) * cos(calc(var(--t) * 0 - var(--a)/2)));
+  --Kx: calc(var(--Ax) + var(--y) * sin(calc(var(--t) * 0 + var(--a)/2)));
+  --Ky: calc(var(--Ay) - var(--y) * cos(calc(var(--t) * 0 + var(--a)/2)));
+
+  --Lx: calc(var(--Bx) + var(--y) * sin(calc(var(--t) * 1 - var(--a)/2)));
+  --Ly: calc(var(--By) - var(--y) * cos(calc(var(--t) * 1 - var(--a)/2)));
+  --Mx: calc(var(--Bx) + var(--y) * sin(calc(var(--t) * 1 + var(--a)/2)));
+  --My: calc(var(--By) - var(--y) * cos(calc(var(--t) * 1 + var(--a)/2)));
+
+  --Nx: calc(var(--Cx) + var(--y) * sin(calc(var(--t) * 2 - var(--a)/2)));
+  --Ny: calc(var(--Cy) - var(--y) * cos(calc(var(--t) * 2 - var(--a)/2)));
+  --Ox: calc(var(--Cx) + var(--y) * sin(calc(var(--t) * 2 + var(--a)/2)));
+  --Oy: calc(var(--Cy) - var(--y) * cos(calc(var(--t) * 2 + var(--a)/2)));
+
+  --Px: calc(var(--Dx) + var(--y) * sin(calc(var(--t) * 3 - var(--a)/2)));
+  --Py: calc(var(--Dy) - var(--y) * cos(calc(var(--t) * 3 - var(--a)/2)));
+  --Qx: calc(var(--Dx) + var(--y) * sin(calc(var(--t) * 3 + var(--a)/2)));
+  --Qy: calc(var(--Dy) - var(--y) * cos(calc(var(--t) * 3 + var(--a)/2)));
+
+  --Rx: calc(var(--Ex) + var(--y) * sin(calc(var(--t) * 4 - var(--a)/2)));
+  --Ry: calc(var(--Ey) - var(--y) * cos(calc(var(--t) * 4 - var(--a)/2)));
+  --Sx: calc(var(--Ex) + var(--y) * sin(calc(var(--t) * 4 + var(--a)/2)));
+  --Sy: calc(var(--Ey) - var(--y) * cos(calc(var(--t) * 4 + var(--a)/2)));
+
+  --Tx: calc(var(--Fx) + var(--y) * sin(calc(var(--t) * 5 - var(--a)/2)));
+  --Ty: calc(var(--Fy) - var(--y) * cos(calc(var(--t) * 5 - var(--a)/2)));
+  --Ux: calc(var(--Fx) + var(--y) * sin(calc(var(--t) * 5 + var(--a)/2)));
+  --Uy: calc(var(--Fy) - var(--y) * cos(calc(var(--t) * 5 + var(--a)/2)));
+
   clip-path: shape(
-    from 50% calc(50% - var(--i)),
-    curve to calc(50% + var(--i) * cos(30deg)) calc(50% - var(--i) / 2)
-      with calc(50% + var(--n) * cos(60deg)) calc(50% - var(--n) * sin(60deg)),
-    curve to calc(50% + var(--i) * cos(30deg)) calc(50% + var(--i) / 2)
-      with calc(50% + var(--n)) 50%,
-    curve to 50% calc(50% + var(--i))
-      with calc(50% + var(--n) * cos(60deg)) calc(50% + var(--n) * sin(60deg)),
-    curve to calc(50% - var(--i) * cos(30deg)) calc(50% + var(--i) / 2)
-      with calc(50% - var(--n) * cos(60deg)) calc(50% + var(--n) * sin(60deg)),
-    curve to calc(50% - var(--i) * cos(30deg)) calc(50% - var(--i) / 2)
-      with calc(50% - var(--n)) 50%,
-    curve to 50% calc(50% - var(--i))
-      with calc(50% - var(--n) * cos(60deg)) calc(50% - var(--n) * sin(60deg)),
+    from var(--Ax) var(--Ay),
+    curve to var(--Bx) var(--By)
+      with var(--Kx) var(--Ky) / var(--Lx) var(--Ly),
+    curve to var(--Cx) var(--Cy)
+      with var(--Mx) var(--My) / var(--Nx) var(--Ny),
+    curve to var(--Dx) var(--Dy)
+      with var(--Ox) var(--Oy) / var(--Px) var(--Py),
+    curve to var(--Ex) var(--Ey)
+      with var(--Qx) var(--Qy) / var(--Rx) var(--Ry),
+    curve to var(--Fx) var(--Fy)
+      with var(--Sx) var(--Sy) / var(--Tx) var(--Ty),
+    curve to var(--Ax) var(--Ay)
+      with var(--Ux) var(--Uy) / var(--Vx) var(--Vy),
     close
   );
 }
@@ -191,23 +266,99 @@ body {
     -1 * var(--star-size) +
     -1 * var(--star-margin)
   );
+  clip-path: polygon(
+    100% 50%,
+    64.14% 64.14%,
+    50% 100%,
+    35.86% 64.14%,
+    0% 50%,
+    35.86% 35.86%,
+    50% 0%,
+    64.14% 35.86%
+  );
 }
 
 .samhain {
-  background: var(--blue);
+  width: calc(--star-size);
+  height: calc(--star-size);
+  border: 1px solid red;
+  position: absolute;
   top: calc(
     100%
     - calc(1 - cos(45deg)) * var(--diameter) / 2
-    + var(--star-margin) * cos(45deg)
     + var(--outer-border) * var(--border-width)
   );
 
   left: calc(
     -1 * var(--outer-border) * var(--border-width) +
     -1 * var(--star-size) +
-    -1 * var(--star-margin) * cos(45deg) +
     calc(1 - cos(45deg)) * var(--diameter) / 2
   );
+
+}
+.season.samhain {
+  background: var(--blue);
+
+  --x: 0;
+  --y: 50%;
+  --a: 40deg;
+  --N: 6;
+  --t: calc(360deg / var(--N));
+
+  --Vx: calc(50% + var(--y) * sin(calc(var(--t) * 0 - var(--a)/2)));
+  --Vy: calc(50% - var(--y) * cos(calc(var(--t) * 0 - var(--a)/2)));
+  --Kx: calc(50% + var(--y) * sin(calc(var(--t) * 0 + var(--a)/2)));
+  --Ky: calc(50% - var(--y) * cos(calc(var(--t) * 0 + var(--a)/2)));
+
+  --Lx: calc(50% + var(--y) * sin(calc(var(--t) * 1 - var(--a)/2)));
+  --Ly: calc(50% - var(--y) * cos(calc(var(--t) * 1 - var(--a)/2)));
+  --Mx: calc(50% + var(--y) * sin(calc(var(--t) * 1 + var(--a)/2)));
+  --My: calc(50% - var(--y) * cos(calc(var(--t) * 1 + var(--a)/2)));
+
+  --Nx: calc(50% + var(--y) * sin(calc(var(--t) * 2 - var(--a)/2)));
+  --Ny: calc(50% - var(--y) * cos(calc(var(--t) * 2 - var(--a)/2)));
+  --Ox: calc(50% + var(--y) * sin(calc(var(--t) * 2 + var(--a)/2)));
+  --Oy: calc(50% - var(--y) * cos(calc(var(--t) * 2 + var(--a)/2)));
+
+  --Px: calc(50% + var(--y) * sin(calc(var(--t) * 3 - var(--a)/2)));
+  --Py: calc(50% - var(--y) * cos(calc(var(--t) * 3 - var(--a)/2)));
+  --Qx: calc(50% + var(--y) * sin(calc(var(--t) * 3 + var(--a)/2)));
+  --Qy: calc(50% - var(--y) * cos(calc(var(--t) * 3 + var(--a)/2)));
+
+  --Rx: calc(50% + var(--y) * sin(calc(var(--t) * 4 - var(--a)/2)));
+  --Ry: calc(50% - var(--y) * cos(calc(var(--t) * 4 - var(--a)/2)));
+  --Sx: calc(50% + var(--y) * sin(calc(var(--t) * 4 + var(--a)/2)));
+  --Sy: calc(50% - var(--y) * cos(calc(var(--t) * 4 + var(--a)/2)));
+
+  --Tx: calc(50% + var(--y) * sin(calc(var(--t) * 5 - var(--a)/2)));
+  --Ty: calc(50% - var(--y) * cos(calc(var(--t) * 5 - var(--a)/2)));
+  --Ux: calc(50% + var(--y) * sin(calc(var(--t) * 5 + var(--a)/2)));
+  --Uy: calc(50% - var(--y) * cos(calc(var(--t) * 5 + var(--a)/2)));
+
+  clip-path: polygon(
+    50% 50%,
+    var(--Vx) var(--Vy),
+    var(--Kx) var(--Ky),
+    50% 50%,
+    var(--Lx) var(--Ly),
+    var(--Mx) var(--My),
+    50% 50%,
+    var(--Nx) var(--Ny),
+    var(--Ox) var(--Oy),
+    50% 50%,
+    var(--Px) var(--Py),
+    var(--Qx) var(--Qy),
+    50% 50%,
+    var(--Rx) var(--Ry),
+    var(--Sx) var(--Sy),
+    50% 50%,
+    var(--Tx) var(--Ty),
+    var(--Ux) var(--Uy),
+    50% 50%
+  );
+}
+.season.samhain.c {
+ --a: 43deg!important;
 }
 
 .imbolc {
@@ -215,14 +366,60 @@ body {
   top: calc(
     100%
     - calc(1 - cos(45deg)) * var(--diameter) / 2
-    + var(--star-margin) * cos(45deg)
     + var(--outer-border) * var(--border-width)
   );
   left: calc(
     50%
     + var(--border-width)
-    + var(--star-margin) * cos(45deg)
     + cos(45deg) * var(--diameter) / 2
+  );
+  --N: 6;
+  --x: 50%;
+  --t: calc(360deg / var(--N));
+  --y: 30%;
+
+  --Ax: calc(50% + var(--x) * sin(calc(0 * var(--t))));
+  --Ay: calc(50% - var(--x) * cos(calc(0 * var(--t))));
+  --Bx: calc(50% + var(--x) * sin(calc(1 * var(--t))));
+  --By: calc(50% - var(--x) * cos(calc(1 * var(--t))));
+  --Cx: calc(50% + var(--x) * sin(calc(2 * var(--t))));
+  --Cy: calc(50% - var(--x) * cos(calc(2 * var(--t))));
+  --Dx: calc(50% + var(--x) * sin(calc(3 * var(--t))));
+  --Dy: calc(50% - var(--x) * cos(calc(3 * var(--t))));
+  --Ex: calc(50% + var(--x) * sin(calc(4 * var(--t))));
+  --Ey: calc(50% - var(--x) * cos(calc(4 * var(--t))));
+  --Fx: calc(50% + var(--x) * sin(calc(5 * var(--t))));
+  --Fy: calc(50% - var(--x) * cos(calc(5 * var(--t))));
+
+  --Aix: calc(50% + var(--y) * sin(calc(0 * var(--t))));
+  --Aiy: calc(50% - var(--y) * cos(calc(0 * var(--t))));
+  --Bix: calc(50% + var(--y) * sin(calc(1 * var(--t))));
+  --Biy: calc(50% - var(--y) * cos(calc(1 * var(--t))));
+  --Cix: calc(50% + var(--y) * sin(calc(2 * var(--t))));
+  --Ciy: calc(50% - var(--y) * cos(calc(2 * var(--t))));
+  --Dix: calc(50% + var(--y) * sin(calc(3 * var(--t))));
+  --Diy: calc(50% - var(--y) * cos(calc(3 * var(--t))));
+  --Eix: calc(50% + var(--y) * sin(calc(4 * var(--t))));
+  --Eiy: calc(50% - var(--y) * cos(calc(4 * var(--t))));
+  --Fix: calc(50% + var(--y) * sin(calc(5 * var(--t))));
+  --Fiy: calc(50% - var(--y) * cos(calc(5 * var(--t))));
+
+  clip-path: polygon(
+    var(--Ax) var(--Ay),
+    var(--Bx) var(--By),
+    var(--Cx) var(--Cy),
+    var(--Dx) var(--Dy),
+    var(--Ex) var(--Ey),
+    var(--Fx) var(--Fy),
+    var(--Ax) var(--Ay),
+
+    var(--Aix) var(--Aiy),
+    var(--Fix) var(--Fiy),
+    var(--Eix) var(--Eiy),
+    var(--Dix) var(--Diy),
+    var(--Cix) var(--Ciy),
+    var(--Bix) var(--Biy),
+    var(--Aix) var(--Aiy)
   );
 }
 
@@ -237,6 +434,56 @@ body {
     - var(--star-size) / 2
     - var(--outer-border) * var(--border-width) / 2
   );
+
+  --x: 15%;
+  --y: 55%;
+  --a: 60deg;
+  --N: 4;
+  --t: calc(360deg / var(--N));
+
+  --Ax: calc(50% + var(--x) * sin(calc(0 * var(--t))));
+  --Ay: calc(50% - var(--x) * cos(calc(0 * var(--t))));
+  --Bx: calc(50% + var(--x) * sin(calc(1 * var(--t))));
+  --By: calc(50% - var(--x) * cos(calc(1 * var(--t))));
+  --Cx: calc(50% + var(--x) * sin(calc(2 * var(--t))));
+  --Cy: calc(50% - var(--x) * cos(calc(2 * var(--t))));
+  --Dx: calc(50% + var(--x) * sin(calc(3 * var(--t))));
+  --Dy: calc(50% - var(--x) * cos(calc(3 * var(--t))));
+
+  --Vx: calc(var(--Ax) + var(--y) * sin(calc(var(--t) * 0 - var(--a)/2)));
+  --Vy: calc(var(--Ay) - var(--y) * cos(calc(var(--t) * 0 - var(--a)/2)));
+  --Kx: calc(var(--Ax) + var(--y) * sin(calc(var(--t) * 0 + var(--a)/2)));
+  --Ky: calc(var(--Ay) - var(--y) * cos(calc(var(--t) * 0 + var(--a)/2)));
+
+  --Lx: calc(var(--Bx) + var(--y) * sin(calc(var(--t) * 1 - var(--a)/2)));
+  --Ly: calc(var(--By) - var(--y) * cos(calc(var(--t) * 1 - var(--a)/2)));
+  --Mx: calc(var(--Bx) + var(--y) * sin(calc(var(--t) * 1 + var(--a)/2)));
+  --My: calc(var(--By) - var(--y) * cos(calc(var(--t) * 1 + var(--a)/2)));
+
+  --Nx: calc(var(--Cx) + var(--y) * sin(calc(var(--t) * 2 - var(--a)/2)));
+  --Ny: calc(var(--Cy) - var(--y) * cos(calc(var(--t) * 2 - var(--a)/2)));
+  --Ox: calc(var(--Cx) + var(--y) * sin(calc(var(--t) * 2 + var(--a)/2)));
+  --Oy: calc(var(--Cy) - var(--y) * cos(calc(var(--t) * 2 + var(--a)/2)));
+
+  --Px: calc(var(--Dx) + var(--y) * sin(calc(var(--t) * 3 - var(--a)/2)));
+  --Py: calc(var(--Dy) - var(--y) * cos(calc(var(--t) * 3 - var(--a)/2)));
+  --Qx: calc(var(--Dx) + var(--y) * sin(calc(var(--t) * 3 + var(--a)/2)));
+  --Qy: calc(var(--Dy) - var(--y) * cos(calc(var(--t) * 3 + var(--a)/2)));
+
+  transform: rotate(45deg);
+
+  clip-path: shape(
+    from var(--Ax) var(--Ay),
+    curve to var(--Bx) var(--By)
+      with var(--Kx) var(--Ky) / var(--Lx) var(--Ly),
+    curve to var(--Cx) var(--Cy)
+      with var(--Mx) var(--My) / var(--Nx) var(--Ny),
+    curve to var(--Dx) var(--Dy)
+      with var(--Ox) var(--Oy) / var(--Px) var(--Py),
+    curve to var(--Ax) var(--Ay)
+      with var(--Qx) var(--Qy) / var(--Vx) var(--Vy),
+    close
+  );
 }
 
 .beltane {
@@ -244,15 +491,75 @@ body {
   left: calc(
     50%
     + var(--border-width)
-    + var(--star-margin) * cos(45deg)
     + cos(45deg) * var(--diameter) / 2
   );
   top: calc(
     -1 * var(--outer-border) * var(--border-width) + 
     -1 * var(--star-size) +
-    -1 * var(--star-margin) * cos(45deg) +
     calc(1 - cos(45deg)) * var(--diameter) / 2
   );
+
+  --r1: 50%;
+  --r2: -17%;
+  --N: 6;
+  --t: calc(360deg / var(--N));
+  --c: 42%;
+
+  --A1x: calc(50% - var(--r1) * sin(var(--t) * 0));
+  --A1y: calc(50% + var(--r1) * cos(var(--t) * 0));
+  --B1x: calc(50% - var(--r1) * sin(var(--t) * 1));
+  --B1y: calc(50% + var(--r1) * cos(var(--t) * 1));
+  --C1x: calc(50% - var(--r1) * sin(var(--t) * 2));
+  --C1y: calc(50% + var(--r1) * cos(var(--t) * 2));
+  --D1x: calc(50% - var(--r1) * sin(var(--t) * 3));
+  --D1y: calc(50% + var(--r1) * cos(var(--t) * 3));
+  --E1x: calc(50% - var(--r1) * sin(var(--t) * 4));
+  --E1y: calc(50% + var(--r1) * cos(var(--t) * 4));
+  --F1x: calc(50% - var(--r1) * sin(var(--t) * 5));
+  --F1y: calc(50% + var(--r1) * cos(var(--t) * 5));
+
+  --A2x: calc(50% - var(--r2) * sin(var(--t) * 0));
+  --A2y: calc(50% + var(--r2) * cos(var(--t) * 0));
+  --B2x: calc(50% - var(--r2) * sin(var(--t) * 1));
+  --B2y: calc(50% + var(--r2) * cos(var(--t) * 1));
+  --C2x: calc(50% - var(--r2) * sin(var(--t) * 2));
+  --C2y: calc(50% + var(--r2) * cos(var(--t) * 2));
+  --D2x: calc(50% - var(--r2) * sin(var(--t) * 3));
+  --D2y: calc(50% + var(--r2) * cos(var(--t) * 3));
+  --E2x: calc(50% - var(--r2) * sin(var(--t) * 4));
+  --E2y: calc(50% + var(--r2) * cos(var(--t) * 4));
+  --F2x: calc(50% - var(--r2) * sin(var(--t) * 5));
+  --F2y: calc(50% + var(--r2) * cos(var(--t) * 5));
+
+  transform: rotate(calc(var(--t) / 2));
+  clip-path: shape(
+    from 50% 50%,
+    line to var(--A1x) var(--A1y),
+    line to var(--A2x) var(--A2y),
+    arc to var(--A1x) var(--A1y) of var(--c) cw,
+    line to 50% 50%,
+    line to var(--B1x) var(--B1y),
+    line to var(--B2x) var(--B2y),
+    arc to var(--B1x) var(--B1y) of var(--c) cw,
+    line to 50% 50%,
+    line to var(--C1x) var(--C1y),
+    line to var(--C2x) var(--C2y),
+    arc to var(--C1x) var(--C1y) of var(--c) cw,
+    line to 50% 50%,
+    line to var(--D1x) var(--D1y),
+    line to var(--D2x) var(--D2y),
+    arc to var(--D1x) var(--D1y) of var(--c) cw,
+    line to 50% 50%,
+    line to var(--E1x) var(--E1y),
+    line to var(--E2x) var(--E2y),
+    arc to var(--E1x) var(--E1y) of var(--c) cw,
+    line to 50% 50%,
+    line to var(--F1x) var(--F1y),
+    line to var(--F2x) var(--F2y),
+    arc to var(--F1x) var(--F1y) of var(--c) cw,
+    line to 50% 50%,
+    close
+  )
 }
   </style>
   </head>
@@ -263,29 +570,44 @@ body {
       <span class="inner-border back"></span>
       <span class="inner-border forward"></span>
 
-      <div class="season summer outline"></div>
+      <div class="season summer outline c"></div>
       <div class="season summer"></div>
 
-      <div class="season lughnasadh outline"></div>
+      <div class="season lughnasadh outline t"></div>
+      <div class="season lughnasadh outline r"></div>
+      <div class="season lughnasadh outline b"></div>
+      <div class="season lughnasadh outline l"></div>
       <div class="season lughnasadh"></div>
 
-      <div class="season autumn outline"></div>
+      <div class="season autumn outline c"></div>
       <div class="season autumn"></div>
 
-      <div class="season samhain outline"></div>
+      <div class="season samhain outline c"></div>
+      <div class="season samhain outline t"></div>
+      <div class="season samhain outline r"></div>
+      <div class="season samhain outline b"></div>
+      <div class="season samhain outline l"></div>
       <div class="season samhain"></div>
 
-      <div class="season winter outline"></div>
+      <div class="season winter outline c"></div>
       <div class="season winter"></div>
 
-      <div class="season imbolc outline"></div>
+      <div class="season imbolc outline t"></div>
+      <div class="season imbolc outline r"></div>
+      <div class="season imbolc outline b"></div>
+      <div class="season imbolc outline l"></div>
       <div class="season imbolc"></div>
 
-      <div class="season spring outline"></div>
+      <div class="season spring outline t"></div>
+      <div class="season spring outline r"></div>
+      <div class="season spring outline b"></div>
+      <div class="season spring outline l"></div>
       <div class="season spring"></div>
 
-      <div class="season beltane outline"></div>
-      <div class="season beltane"></div>
+      <section class="beltane-shadow">
+        <div class="season beltane"></div>
+      </section>
+
     </div>
   </body>
 </html>
