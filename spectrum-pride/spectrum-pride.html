@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style type="text/css">
+@font-face {
+  font-family: OldStandardTT;
+  src: url('./OldStandard-Regular.otf');
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#autism-flag {
+  --bar-width: 100px;
+  --height: calc(var(--bar-width) * 7);
+  --width: calc(var(--bar-width) * 14);
+  --red:    #f00;
+  --orange: #f80;
+  --yellow: #ff0;
+  --green:  #080;
+  --cyan:   #0ff;
+  --blue:   #00f;
+  --purple: #80f;
+
+  position: relative;
+  width: var(--width);
+}
+#autism-flag * {
+  margin: 0;
+  padding: 0
+}
+#autism-flag p {
+  font-family: 'Old Standard TT', OldStandardTT;
+  font-size:  calc(var(--bar-width) * 15.5);
+  position: absolute;
+  height: var(--height);
+  line-height: var(--height);
+  margin-top: calc(var(--bar-width) * -1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+#autism-flag div {
+  height: var(--bar-width);
+  position: absolute;
+  width: 100%;
+  top: calc(var(--i) * var(--bar-width));
+  background-color: var(--c);
+}
+#autism-flag .red    { --i: 0; --c: var(--red)    }
+#autism-flag .orange { --i: 1; --c: var(--orange) }
+#autism-flag .yellow { --i: 2; --c: var(--yellow) }
+#autism-flag .green  { --i: 3; --c: var(--green)  }
+#autism-flag .cyan   { --i: 4; --c: var(--cyan)   }
+#autism-flag .blue   { --i: 5; --c: var(--blue)   }
+#autism-flag .purple { --i: 6; --c: var(--purple) }
+  </style>
+  </head>
+  <body>
+    <div id="autism-flag">
+      <div class="red"></div>
+      <div class="orange"></div>
+      <div class="yellow"></div>
+      <div class="green"></div>
+      <div class="cyan"></div>
+      <div class="blue"></div>
+      <div class="purple"></div>
+      <p>∞</p>
+    </div>
+  </body>
+</html>
+
