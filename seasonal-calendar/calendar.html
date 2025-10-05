@@ -704,7 +704,7 @@ body {
     </div>
 
     <div id="comments">
-      <a id="expand" href="#" onclick="expand()" class="button">Expand</a>
+      <a id="expand" href="#" class="button">Expand</a>
       <p>This is the seasonal calendar, rendered in HTML and CSS, for funsies.
       The borders don't quite work as well as the SVG version, because you
       can't put a border around a CSS <code>clip-path</code>. Of course, I
@@ -727,9 +727,9 @@ body {
       </ol>
     </div>
     <script>
-      const expand = e => {
+      const b = document.getElementById('expand')
+      b.addEventListener('click', e => {
         const c = document.getElementById('comments')
-        const b = document.getElementById('expand')
         if (c.className.includes('expanded')) {
           b.innerHTML = 'Expand'
           c.className = ''
@@ -737,7 +737,9 @@ body {
           b.innerHTML = 'Collapse'
           c.className = 'expanded'
         }
-      }
+        e.preventDefault()
+        return false
+      })
     </script>
   </body>
 </html>
