@@ -2,7 +2,7 @@
 <html>
   <head>
   <style type="text/css">
-* {
+html, body, div, p {
   margin: 0;
   padding: 0;
 }
@@ -65,6 +65,7 @@ body {
   );
 }
 .inner-border {
+  z-index: 10;
   display: block;
   position: absolute;
   height: var(--border-width);
@@ -81,6 +82,66 @@ body {
 }
 .inner-border.forward {
   transform: rotate(45deg);
+}
+
+.date {
+  z-index: 11;
+  position: absolute;
+  width: var(--border-width);
+  height: calc(var(--diameter));
+  display: block;
+  position: absolute;
+  transform: rotate(calc(360deg / -365 * (var(--julian) + 10)));
+  left: calc(50% - calc(var(--border-width) / 2));
+  top: 0;
+  --julian: 0;
+  --bg: black;
+}
+
+.date span {
+  background-color: var(--bg);
+  top: 50%;
+  left: 0;
+  position: absolute;
+  height: 50%;
+  width: 100%;
+}
+
+.perihelion.date {
+  --julian: 3;
+  --bg: var(--red);
+}
+.aphelion.date {
+  --bg: var(--blue);
+  --julian: 186;
+}
+.birthday.date {
+  --bg: var(--magenta);
+  --julian: 182;
+}
+.xmas.date {
+  --bg: var(--green);
+  --julian: 359;
+}
+.thanksgiving.date {
+  --bg: var(--orange);
+  --julian: 329;
+}
+.apr20.date {
+  --bg: var(--green);
+  --julian: 110;
+}
+.halloween.date {
+  --bg: gray;
+  --julian: 304;
+}
+.date.juniper {
+  --bg: white;
+  --julian: 91;
+}
+.date.max {
+  --bg: white;
+  --julian: 252;
 }
 
 .season {
@@ -561,6 +622,29 @@ body {
     close
   )
 }
+#comments {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 10px solid rgba(0,0,0,0.05);
+  background-color: rgba(255,255,255,0.9);
+  padding: 1em;
+  width: min-content;
+  max-width: 25%;
+}
+#comments.expanded {
+  width: max-content;
+}
+#comments p {
+  margin: 0 0 1em;
+}
+#comments ol {
+  margin: 0;
+  padding: 0 4rex;
+}
+#comments p, #comments ol { display: none }
+#comments.expanded p, #comments.expanded ol { display: block }
+
   </style>
   </head>
   <body>
@@ -569,6 +653,16 @@ body {
       <span class="inner-border horizontal"></span>
       <span class="inner-border back"></span>
       <span class="inner-border forward"></span>
+
+      <span class="perihelion date"><span></span></span>
+      <span class="aphelion date"><span></span></span>
+      <span class="birthday date"><span></span></span>
+      <span class="xmas date"><span></span></span>
+      <span class="thanksgiving date"><span></span></span>
+      <span class="apr20 date"><span></span></span>
+      <span class="halloween date"><span></span></span>
+      <span class="max date"><span></span></span>
+      <span class="juniper date"><span></span></span>
 
       <div class="season summer outline c"></div>
       <div class="season summer"></div>
@@ -607,8 +701,44 @@ body {
       <section class="beltane-shadow">
         <div class="season beltane"></div>
       </section>
-
     </div>
+
+    <div id="comments">
+      <a id="expand" href="#" onclick="expand()" class="button">Expand</a>
+      <p>This is the seasonal calendar, rendered in HTML and CSS, for funsies.
+      The borders don't quite work as well as the SVG version, because you
+      can't put a border around a CSS <code>clip-path</code>. Of course, I
+      could've defined the clip-path and the border both as an SVG path, but at
+      that point, why not just use SVG in the first place, since it's easier
+      and more precise?</p>
+      <p>The extra lines radiating out from the center are various other
+      special dates. Starting from Winter and moving counterclockwise, they
+      are:</p>
+      <ol>
+        <li>Xmas in green</li>
+        <li>Perihelion in red</li>
+        <li>Juniper in white</li>
+        <li>4/20 in green</li>
+        <li>Birthday in magenta</li>
+        <li>Aphelion in blue</li>
+        <li>Max in white</li>
+        <li>Halloween in gray</li>
+        <li>Thanksgiving in orange</li>
+      </ol>
+    </div>
+    <script>
+      const expand = e => {
+        const c = document.getElementById('comments')
+        const b = document.getElementById('expand')
+        if (c.className.includes('expanded')) {
+          b.innerHTML = 'Expand'
+          c.className = ''
+        } else {
+          b.innerHTML = 'Collapse'
+          c.className = 'expanded'
+        }
+      }
+    </script>
   </body>
 </html>
 
