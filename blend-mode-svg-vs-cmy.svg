@@ -4,18 +4,15 @@
     <circle cx="200" cy="200" r="200"                fill="#ff0000" style="mix-blend-mode: lighten" />
     <circle cx="400" cy="200" r="200"                fill="#00ff00" style="mix-blend-mode: lighten" />
     <circle cx="300" cy="373.20508075688775" r="200" fill="#0000ff" style="mix-blend-mode: lighten" />
-  </g>
-  <g style="isolation: isolate">
+
     <circle cx="800"  cy="200" r="200"                fill="#00ffff" style="mix-blend-mode: darken" />
     <circle cx="1000" cy="200" r="200"                fill="#ff00ff" style="mix-blend-mode: darken" />
     <circle cx="900"  cy="373.20508075688775" r="200" fill="#ffff00" style="mix-blend-mode: darken" />
-  </g>
-  <g style="isolation: isolate">
+
     <circle cx="200" cy="800" r="200"                fill="color(display-p3 1 0 0)" style="mix-blend-mode: lighten" />
     <circle cx="400" cy="800" r="200"                fill="color(display-p3 0 1 0)" style="mix-blend-mode: lighten" />
     <circle cx="300" cy="973.20508075688775" r="200" fill="color(display-p3 0 0 1)" style="mix-blend-mode: lighten" />
-  </g>
-  <g style="isolation: isolate">
+
     <circle cx="800"  cy="800" r="200"                fill="color(display-p3 0 1 1)" style="mix-blend-mode: darken" />
     <circle cx="1000" cy="800" r="200"                fill="color(display-p3 1 0 1)" style="mix-blend-mode: darken" />
     <circle cx="900"  cy="973.20508075688775" r="200" fill="color(display-p3 1 1 0)" style="mix-blend-mode: darken" />
