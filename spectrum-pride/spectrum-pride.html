@@ -16,13 +16,13 @@ html, body {
   --bar-width: 100px;
   --height: calc(var(--bar-width) * 7);
   --width: calc(var(--bar-width) * 14);
-  --red:    #f00;
-  --orange: #f80;
-  --yellow: #ff0;
-  --green:  #080;
-  --cyan:   #0ff;
-  --blue:   #00f;
-  --purple: #80f;
+  --red:     color(display-p3 1 0 0);
+  --orange:  color(rec2020 1 0.5 0);
+  --yellow:  color(rec2020 1 1 0);
+  --green:   color(rec2020 0 0.5 0);
+  --cyan:    color(rec2020 0 1 1);
+  --blue:    color(rec2020 0 0 1);
+  --purple:  color(rec2020 0.5 0 1);
 
   position: relative;
   width: var(--width);
