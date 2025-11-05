@@ -3,6 +3,6 @@
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,100,100" style="enable-background:new 0 0 100 100;" version="1.1">
 <defs/>
 <g id="layer0">
-<path d="M49.9005,9.7475L59.9285,40.5035L92.2805,40.3315L66.1255,59.3725L76.2885,90.0855L50.0965,71.0955L24.0275,90.2525L33.9925,59.4755L7.71951,40.6015L40.0685,40.5665L49.9005,9.7475L49.9005,9.7475Z" stroke="#000000" stroke-width="1" stroke-linecap="round" fill="#8800FF" stroke-linejoin="miter"/>
+<path d="M49.9005,9.7475L59.9285,40.5035L92.2805,40.3315L66.1255,59.3725L76.2885,90.0855L50.0965,71.0955L24.0275,90.2525L33.9925,59.4755L7.71951,40.6015L40.0685,40.5665L49.9005,9.7475L49.9005,9.7475Z" stroke="#000000" stroke-width="1" stroke-linecap="round" fill="color(display-p3 0.5 0 1)" stroke-linejoin="miter"/>
 </g>
 </svg>
