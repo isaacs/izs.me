@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="1200" viewBox="0 0 1200 1200">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1220" height="1210" viewBox="0 0 1210 1220" style="background:color(rec2020 0.5 0.5 0.5)">
   <g style="isolation: isolate">
-    <circle cx="200" cy="200" r="200"                fill="#ff0000" style="mix-blend-mode: lighten" />
-    <circle cx="400" cy="200" r="200"                fill="#00ff00" style="mix-blend-mode: lighten" />
-    <circle cx="300" cy="373.20508075688775" r="200" fill="#0000ff" style="mix-blend-mode: lighten" />
+    <circle cx="210" cy="210" r="200"                fill="#ff0000" style="mix-blend-mode: lighten" />
+    <circle cx="410" cy="210" r="200"                fill="#00ff00" style="mix-blend-mode: lighten" />
+    <circle cx="310" cy="383.20508075688775" r="200" fill="#0000ff" style="mix-blend-mode: lighten" />
 
-    <circle cx="800"  cy="200" r="200"                fill="#00ffff" style="mix-blend-mode: darken" />
-    <circle cx="1000" cy="200" r="200"                fill="#ff00ff" style="mix-blend-mode: darken" />
-    <circle cx="900"  cy="373.20508075688775" r="200" fill="#ffff00" style="mix-blend-mode: darken" />
+    <circle cx="820"  cy="210" r="200"                fill="#00ffff" style="mix-blend-mode: darken" />
+    <circle cx="1020" cy="210" r="200"                fill="#ff00ff" style="mix-blend-mode: darken" />
+    <circle cx="920"  cy="383.20508075688775" r="200" fill="#ffff00" style="mix-blend-mode: darken" />
 
-    <circle cx="200" cy="800" r="200"                fill="color(display-p3 1 0 0)" style="mix-blend-mode: lighten" />
-    <circle cx="400" cy="800" r="200"                fill="color(rec2020 0 1 0)" style="mix-blend-mode: lighten" />
-    <circle cx="300" cy="973.20508075688775" r="200" fill="color(rec2020 0 0 1)" style="mix-blend-mode: lighten" />
+    <circle cx="210" cy="783.20508075688775" r="200"                fill="color(display-p3 1 0 0)" style="mix-blend-mode: lighten" />
+    <circle cx="410" cy="783.20508075688775" r="200"                fill="color(rec2020 0 1 0)" style="mix-blend-mode: lighten" />
+    <circle cx="310" cy="956.4101615137754" r="200" fill="color(rec2020 0 0 1)" style="mix-blend-mode: lighten" />
 
-    <circle cx="800"  cy="800" r="200"                fill="color(rec2020 0 1 1)" style="mix-blend-mode: darken" />
-    <circle cx="1000" cy="800" r="200"                fill="color(rec2020 1 0 1)" style="mix-blend-mode: darken" />
-    <circle cx="900"  cy="973.20508075688775" r="200" fill="color(rec2020 1 1 0)" style="mix-blend-mode: darken" />
+    <circle cx="820"  cy="783.20508075688775" r="200"                fill="color(rec2020 0 1 1)" style="mix-blend-mode: darken" />
+    <circle cx="1020" cy="783.20508075688775" r="200"                fill="color(rec2020 1 0 1)" style="mix-blend-mode: darken" />
+    <circle cx="920"  cy="956.4101615137754" r="200" fill="color(rec2020 1 1 0)" style="mix-blend-mode: darken" />
   </g>
 </svg>
