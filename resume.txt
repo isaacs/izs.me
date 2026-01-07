@@ -22,7 +22,7 @@ Oakland, CA 94609
 * npm <https://www.npmjs.com/>
 * Node.js <https://nodejs.org/>
 * testing <https://node-tap.org/>
-* writing code <https://github.com/sponsors/isaacs>
+* writing code <https://isaacs.github.io>
 * writing words
   * long <https://blog.izs.me/>
   * medium <https://www.reddit.com/user/isaacs_>
