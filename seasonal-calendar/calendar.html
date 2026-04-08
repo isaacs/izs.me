@@ -236,6 +236,9 @@ body {
 }
 
 .lughnasadh {
+  transform: rotate(-15deg);
+  transform-box: fill-box;
+  transform-origin: center;
   background: var(--green);
   top: calc(
     -1 * var(--outer-border) * var(--border-width) + 
@@ -340,6 +343,9 @@ body {
 }
 
 .samhain {
+  transform: rotate(-15deg);
+  transform-box: fill-box;
+  transform-origin: center;
   width: calc(--star-size);
   height: calc(--star-size);
   border: 1px solid red;
@@ -424,6 +430,10 @@ body {
 
 .imbolc {
   background: var(--magenta);
+  transform: rotate(15deg);
+  transform-box: fill-box;
+  transform-origin: center;
+
   top: calc(
     100%
     - calc(1 - cos(45deg)) * var(--diameter) / 2
@@ -548,6 +558,9 @@ body {
 }
 
 .beltane {
+  transform: rotate(-15deg);
+  transform-box: fill-box;
+  transform-origin: center;
   background: var(--orange);
   left: calc(
     50%
