@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1400" height="2400" viewBox="0 0 1400 2400" style="enable-background:new 0 0 600 600; background-color: #E5CFCB">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1400" height="1600" viewBox="0 0 1400 1600" style="enable-background:new 0 0 600 600; background-color: #E5CFCB">
 
 <!-- R=100, r=200, x=300, y=300 -->
 <!-- RGB ring -->
@@ -39,56 +39,43 @@
   <circle cx="800" cy="300" r="100" fill="#E5CFCB" style="mix-blend-mode: normal" stroke="#000000" stroke-width="0" />
 </g>
 
-<!-- R=40, r=200, r-(r*2-R)/2 x=300, y=800 -->
+
+<!-- R=100, r=200, x=300, y=300 -->
 <!-- RGB ring -->
 <g style="isolation: isolate">
-  <!-- outer black circle -->
-  <circle cx="300" cy="800" r="200" fill="color(display-p3 0 0 0)" style="mix-blend-mode: normal" stroke="#000000" stroke-width="0" />
   <!-- red -->
-  <!-- x=x, y=y-R/2, r=(2r-R)/2=(400-40)/2=180 -->
-  <circle cx="300" cy="780" r="180" fill="color(display-p3 1 0 0)" style="mix-blend-mode: lighten" />
+  <circle cx="300" cy="750" r="150" fill="color(display-p3 1 0 0)" style="mix-blend-mode: lighten" />
   <!-- green -->
-  <!-- y = y - (r-(r*2-R)/2)*Math.cos(2*Math.PI/3) -->
-  <!-- x = x + (r-(r*2-R)/2)*Math.sin(2*Math.PI/3) = 351.9615242270663 -->
-  <!-- r = (2*r-R)/2 = 180 -->
-  <circle cx="317.3205080756888" cy="810" r="180" fill="color(display-p3 0 1 0)" style="mix-blend-mode: lighten" />
+  <!-- y = 300 - R*Math.cos(2*Math.PI/3) = 325 -->
+  <!-- x = 300 + R*Math.sin(2*Math.PI/3) = 343.30127018922195 -->
+  <circle cx="343.30127018922192" cy="825" r="150" fill="color(display-p3 0 1 0)" style="mix-blend-mode: lighten" />
   <!-- blue -->
-  <!-- x = x - (r-(r*2-R)/2)*Math.sin(2*Math.PI/3) = 282.6794919243112 -->
-  <!-- y = y - (r-(r*2-R)/2)*Math.cos(2*Math.PI/3) = 810 -->
-  <circle cx="282.6794919243112" cy="810" r="180" fill="color(display-p3 0 0 1)" style="mix-blend-mode: lighten" />
-  <!-- inner skintone circle -->
-  <!-- radius = r-R -->
-  <circle cx="300" cy="800" r="160" fill="#E5CFCB" style="mix-blend-mode: normal" stroke="#000000" stroke-width="0"  />
+  <!-- x = 300 - R*Math.sin(2*Math.PI/3) = 256.69872981077805 -->
+  <!-- y = 300 - R*Math.cos(2*Math.PI/3) = 275 -->
+  <circle cx="256.69872981077805" cy="825" r="150" fill="color(display-p3 0 0 1)" style="mix-blend-mode: lighten" />
 </g>
 
-<!-- R=40, r=200, x=800, y=800 -->
 <!-- CMY ring -->
 <g style="isolation: isolate">
-  <!-- outer black circle -->
-  <circle cx="800" cy="800" r="200" fill="color(display-p3 1 1 1)" style="mix-blend-mode: normal" />
   <!-- cyan -->
-  <!-- x=x, y=y-R/2, r=(2r-R)/2=(400-40)/2=180 -->
-  <circle cx="800" cy="780" r="180" fill="color(display-p3 0 1 1)" style="mix-blend-mode: darken" />
+  <circle cx="800" cy="750" r="150" fill="color(display-p3 0 1 1)" style="mix-blend-mode: darken" />
   <!-- magenta -->
-  <!-- y = y - (r-(r*2-R)/2)*Math.cos(2*Math.PI/3) -->
-  <!-- x = x + (r-(r*2-R)/2)*Math.sin(2*Math.PI/3) = 351.9615242270663 -->
-  <!-- r = (2*r-R)/2 = 180 -->
-  <circle cx="817.3205080756888" cy="810" r="180" fill="color(display-p3 1 0 1)" style="mix-blend-mode: darken" />
+  <!-- y = 200 - 50*Math.cos(2*Math.PI/3) = 225 -->
+  <!-- x = 200 + 50*Math.sin(2*Math.PI/3) = 243.30127018922195 -->
+  <circle cx="843.30127018922192" cy="825" r="150" fill="color(display-p3 1 0 1)" style="mix-blend-mode: darken" />
   <!-- yellow -->
-  <!-- x = x - (r-(r*2-R)/2)*Math.sin(2*Math.PI/3) = 282.6794919243112 -->
-  <!-- y = y - (r-(r*2-R)/2)*Math.cos(2*Math.PI/3) = 810 -->
-  <circle cx="782.6794919243112" cy="810" r="180" fill="color(display-p3 1 1 0)" style="mix-blend-mode: darken" />
-  <!-- inner skintone circle -->
-  <!-- radius = r-R -->
-  <circle cx="800" cy="800" r="160" fill="#E5CFCB" style="mix-blend-mode: normal" stroke="#000000" stroke-width="0"  />
+  <!-- x = 200 - 50*Math.sin(2*Math.PI/3) = 156.69872981077805 -->
+  <!-- y = 200 - 50*Math.cos(2*Math.PI/3) = 175 -->
+  <circle cx="756.69872981077805" cy="825" r="150" fill="color(display-p3 1 1 0)" style="mix-blend-mode: darken" />
 </g>
+
 
 
 <!-- R=150, r=200, x=300, y=1300 -->
 <!-- RGB ring -->
 <g style="isolation: isolate">
-  <!-- outer black circle -->
-  <circle cx="300" cy="1300" r="200" fill="color(display-p3 0 0 0)" style="mix-blend-mode: normal" stroke="#000000" stroke-width="0" />
+  <!-- outer black circle
+  <circle cx="300" cy="1300" r="200" fill="color(display-p3 0 0 0)" style="mix-blend-mode: normal" stroke="#000000" stroke-width="0" /> -->
   <!-- red -->
   <!-- x=x, y=y-R/2=1225, r=(2r-R)/2=(400-150)/2=125 -->
   <circle cx="300" cy="1225" r="125" fill="color(display-p3 1 0 0)" style="mix-blend-mode: lighten" />
@@ -102,15 +89,15 @@
   <!-- y = y - (r-(r*2-R)/2)*Math.cos(2*Math.PI/3) -->
   <circle cx="235.0480947161671" cy="1337.5" r="125" fill="color(display-p3 0 0 1)" style="mix-blend-mode: lighten" />
   <!-- inner skintone circle -->
-  <!-- radius = r-R -->
-  <circle cx="300" cy="1300" r="50" fill="#E5CFCB" style="mix-blend-mode: normal" stroke="#000000" stroke-width="0"  />
+  <!-- radius = r-R
+  <circle cx="300" cy="1300" r="50" fill="#E5CFCB" style="mix-blend-mode: normal" stroke="#000000" stroke-width="0"  /> -->
 </g>
 
 <!-- R=150, r=200, x=800, y=1300 -->
 <!-- RGB ring -->
 <g style="isolation: isolate">
-  <!-- outer white circle -->
-  <circle cx="800" cy="1300" r="200" fill="color(display-p3 1 1 1)" style="mix-blend-mode: normal" />
+  <!-- outer white circle
+  <circle cx="800" cy="1300" r="200" fill="color(display-p3 1 1 1)" style="mix-blend-mode: normal" /> -->
   <!-- cyan -->
   <!-- x=x, y=y-R/2=1225, r=(2r-R)/2=(400-150)/2=125 -->
   <circle cx="800" cy="1225" r="125" fill="color(display-p3 0 1 1)" style="mix-blend-mode: darken" />
@@ -124,8 +111,8 @@
   <!-- y = y - (r-(r*2-R)/2)*Math.cos(2*Math.PI/3) -->
   <circle cx="735.0480947161671" cy="1337.5" r="125" fill="color(display-p3 1 1 0)" style="mix-blend-mode: darken" />
   <!-- inner skintone circle -->
-  <!-- radius = r-R -->
-  <circle cx="800" cy="1300" r="50" fill="#E5CFCB" style="mix-blend-mode: normal" stroke="#000000" stroke-width="0"  />
+  <!-- radius = r-R
+  <circle cx="800" cy="1300" r="50" fill="#E5CFCB" style="mix-blend-mode: normal" stroke="#000000" stroke-width="0"  /> -->
 </g>
 
 </svg>
