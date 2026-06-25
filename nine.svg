@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1400" height="1600" viewBox="0 0 1400 1600" style="enable-background:new 0 0 600 600; background-color: #E5CFCB">
+
+<!--
+
+x=400,y=400,r=300
+xn = n => x - r * Math.sin(n * 2 * Math.PI / 9)
+yn = n => y - r * Math.cos(n * 2 * Math.PI / 9)
+xy = n => [xn(n), yn(n)]
+points = []
+for (i = 0; i < 9; i++) points[i] = xy(i)
+
+paths = []
+
+colors = [
+  '1 0 0', // red
+  '1 0.5 0', // orange
+  '1 1 0', // yellow
+  '0.5 1 0', // lime
+  '0 0.5 0', // green
+  '0 1 1', // cyan
+  '0 0 1', // blue
+  '0.5 0 1', //violet
+  '1 0 1', // magenta
+]
+
+for (i = 0; i < 9; i++) {
+  to = (i + 2) % 9
+  c = colors[i]
+  paths.push(`<path d="M ${points[i].join(',')} L ${points[to].join(',')} Z" stroke="color(rec2020 ${c})" stroke-width="4"/>`)
+}
+
+console.log(paths.join('\n'))
+-->
+
+<g style="isolation: isolate">
+<path d="M 400,100 L 104.55767409633762,347.9055466999209 Z" stroke="color(rec2020 1 0 0)" stroke-width="4"/>
+<path d="M 207.16371709403822,170.1866670643066 L 140.1923788646684,550 Z" stroke="color(rec2020 1 0.5 0)" stroke-width="4"/>
+<path d="M 104.55767409633762,347.9055466999209 L 297.3939570022993,681.9077862357725 Z" stroke="color(rec2020 1 1 0)" stroke-width="4"/>
+<path d="M 140.1923788646684,550 L 502.60604299770057,681.9077862357725 Z" stroke="color(rec2020 0.5 1 0)" stroke-width="4"/>
+<path d="M 297.3939570022993,681.9077862357725 L 659.8076211353316,550.0000000000001 Z" stroke="color(rec2020 0 0.5 0)" stroke-width="4"/>
+<path d="M 502.60604299770057,681.9077862357725 L 695.4423259036624,347.905546699921 Z" stroke="color(rec2020 0 1 1)" stroke-width="4"/>
+<path d="M 659.8076211353316,550.0000000000001 L 592.8362829059619,170.18666706430668 Z" stroke="color(rec2020 0 0 1)" stroke-width="4"/>
+<path d="M 695.4423259036624,347.905546699921 L 400,100 Z" stroke="color(rec2020 0.5 0 1)" stroke-width="4"/>
+<path d="M 592.8362829059619,170.18666706430668 L 207.16371709403822,170.1866670643066 Z" stroke="color(rec2020 1 0 1)" stroke-width="4"/>
+
+</g>
+</svg>
