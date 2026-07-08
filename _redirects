@@ -2,8 +2,6 @@
 /gh https://github.com/sponsors/isaacs
 /mast https://mastodon.social/@isaacs
 /twtr https://twitter.com/@izs
-/snips/:date/:slug https://blog.izs.me/snips/:date/:slug/ 301!
-/snips/:date/:slug/ https://blog.izs.me/snips/:date/:slug/ 301!
-/snips/* https://blog.izs.me/snips/:splat 301!
 /snips https://blog.izs.me/tagged/snipsblog/ 301!
 /snips/ https://blog.izs.me/tagged/snipsblog/ 301!
+/snips/* https://blog.izs.me/snips/:splat 301!
