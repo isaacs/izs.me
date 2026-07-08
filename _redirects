@@ -1,4 +1,5 @@
-/hire https://www.ringerhq.com/experts/isaacs
 /sponsor https://github.com/sponsors/isaacs
+/gh https://github.com/sponsors/isaacs
 /mast https://mastodon.social/@isaacs
 /twtr https://twitter.com/@izs
+/snips/* https://blog.izs.me/snips/:splat
